@@ -1,0 +1,167 @@
+@charset "UTF-8";
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e44d26;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e44d26, #f16529);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e44d26, #f16529 40%);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* la sección del heroe es la parte central que engloba título, subtitulo y botones*/
+.hero {
+  color: #FDFDFD;
+  text-align: center;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 10vmin;
+  /*1.8em*/
+}
+
+.subtitle {
+  font-family: 'Pompiere', cursive;
+  padding-top: .6em;
+  font-size: 1.5em;
+  animation: subtitle 2s;
+}
+
+@keyframes subtitle {
+  from {
+    font-size: 0em;
+  }
+  to {
+    font-size: 1.5em;
+  }
+}
+
+.buttons {
+  margin: 3em 2em 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.contact, .jobs {
+  font-family: 'Comfortaa', cursive;
+  padding: .8em 1.5em .7em 1.5em;
+  font-size: 1.5em;
+  color: #FDFDFD;
+  border: 4px solid #FDFDFD;
+  border-radius: 8px;
+  background: none;
+  box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.06);
+  transition: border .5s, color .5s, box-shadow .5s;
+}
+
+.contact:hover, .jobs:hover {
+  border: 4px solid #fff;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact {
+  margin-bottom: 1.5em;
+}
+
+/*Inicio de Media queries*/
+@media screen and (min-width: 450px) {
+  .subtitle {
+    padding-top: .6em;
+    font-size: 1.8em;
+  }
+  @keyframes subtitle {
+    from {
+      font-size: 0em;
+    }
+    to {
+      font-size: 1.8em;
+    }
+  }
+  .buttons {
+    margin: 4em 18% 0 18%;
+  }
+  .contact, .jobs {
+    padding: .8em 2em .7em 2em;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .buttons {
+    margin-top: 5em;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .subtitle {
+    padding-top: .8em;
+    font-size: 2.2em;
+  }
+  @keyframes subtitle {
+    from {
+      font-size: 0em;
+    }
+    to {
+      font-size: 2.2em;
+    }
+  }
+  .buttons {
+    margin: 6em 0 0 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .contact, .jobs {
+    margin-bottom: 0;
+    padding: .8em 2em .7em 2em;
+    margin: 1em;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .subtitle {
+    font-size: 2.5em;
+  }
+  @keyframes subtitle {
+    from {
+      font-size: 0em;
+    }
+    to {
+      font-size: 2.5em;
+    }
+  }
+  .buttons {
+    margin: 8em 0 0 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subtitle {
+    font-size: 3em;
+  }
+  @keyframes subtitle {
+    from {
+      font-size: 0em;
+    }
+    to {
+      font-size: 3em;
+    }
+  }
+  .buttons {
+    margin-top: 10em;
+  }
+}
