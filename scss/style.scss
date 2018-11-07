@@ -2,11 +2,17 @@
 .main{
     width: 100vw;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $orangeDark; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, $orangeDark, $orangeLight); /* Chrome 10-25, Safari 5.1-6 */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: $orangeDark; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from($orangeDark) , color-stop(40%, $orangeLight));
     background: linear-gradient(to right, $orangeDark , $orangeLight 40%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /* la sección del heroe es la parte central que engloba título, subtitulo y botones*/
@@ -17,36 +23,54 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
-.title{
+.hero__title{
     font-family: 'Comfortaa', cursive;
     font-size: 10vmin;/*1.8em*/
 }
-.subtitle{
+.hero__subtitle{
     font-family: 'Pompiere', cursive;
     padding-top: .6em;
     font-size: 1.5em;
-    animation: subtitle 2s;
-    @keyframes subtitle{
-        from{
+    -webkit-animation: subtitle 2s;
+            animation: subtitle 2s;
+    @-webkit-keyframes subtitle{
+        0%{
             font-size: 0em;
         }
-        to{
+        100%{
+            font-size: 1.5em;
+        }
+    }
+    @keyframes subtitle{
+        0%{
+            font-size: 0em;
+        }
+        100%{
             font-size: 1.5em;
         }
     }
 }
-.buttons{
+.hero__buttons{
     margin: 3em 2em 0 2em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction:column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
 }
-.contact, .jobs{
+.hero__contact, .hero__jobs{
     font-family: 'Comfortaa', cursive;
     padding: .8em 1.5em .7em 1.5em;
     font-size: 1.5em;
@@ -54,98 +78,140 @@
     border: 4px solid $white;
     border-radius: 8px;
     background: none;
-    box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
+    -webkit-box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
+            box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
+    -webkit-transition: border .5s, color .5s, -webkit-box-shadow .5s;
+    transition: border .5s, color .5s, -webkit-box-shadow .5s;
     transition: border .5s, color .5s, box-shadow .5s;
+    transition: border .5s, color .5s, box-shadow .5s, -webkit-box-shadow .5s;
 
     &:hover{
         border: 4px solid #fff;
         color: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 }
-.contact{
+.hero__contact{
     margin-bottom: 1.5em;
 }
 /*Inicio de Media queries*/
 @media screen and (min-width:450px) {
-    .subtitle{
+    .hero__subtitle{
         padding-top: .6em;
         font-size: 1.8em;
-        @keyframes subtitle{
-            from{
-                font-size: 0em;
+        @-webkit-keyframes subtitle{
+            0%{
+                font-size: 0;
             }
-            to{
+            100%{
+                font-size: 1.8em;
+            }
+        }
+        @keyframes subtitle{
+            0%{
+                font-size: 0;
+            }
+            100%{
                 font-size: 1.8em;
             }
         }
     }
-    .buttons{
+    .hero__buttons{
         margin: 4em 18% 0 18%;
     }
-    .contact, .jobs{
+    .hero__contact, .hero__jobs{
         padding: .8em 2em .7em 2em;
     }
 }
 @media screen and (min-width:600px) {
-    .buttons{
+    .hero__buttons{
         margin-top: 5em;
     }
 }
 @media screen and (min-width:750px) {
-    .subtitle{
+    .hero__subtitle{
         padding-top: .8em;
         font-size: 2.2em;
-        @keyframes subtitle{
-            from{
-                font-size: 0em;
+        @-webkit-keyframes subtitle{
+            0%{
+                font-size: 0;
             }
-            to{
+            100%{
+                font-size: 2.2em;
+            }
+        }
+        @keyframes subtitle{
+            0%{
+                font-size: 0;
+            }
+            100%{
                 font-size: 2.2em;
             }
         }
     }
-    .buttons{
+    .hero__buttons{
         margin: 6em 0 0 0;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: space-around;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     }
-    .contact, .jobs{
+    .hero__contact, .hero__jobs{
         margin-bottom: 0;
         padding: .8em 2em .7em 2em;
         margin: 1em;
     }
 }
 @media screen and (min-width:950px) {
-    .subtitle{
+    .hero__subtitle{
         font-size: 2.5em;
-        @keyframes subtitle{
-            from{
-                font-size: 0em;
+        @-webkit-keyframes subtitle{
+            0%{
+                font-size: 0;
             }
-            to{
+            100%{
+                font-size: 2.5em;
+            }
+        }
+        @keyframes subtitle{
+            0%{
+                font-size: 0;
+            }
+            100%{
                 font-size: 2.5em;
             }
         }
     }
-    .buttons{
+    .hero__buttons{
         margin: 8em 0 0 0;
     }
 }
 @media screen and (min-width:1200px) {
-    .subtitle{
+    .hero__subtitle{
         font-size: 3em;
-        @keyframes subtitle{
-            from{
-                font-size: 0em;
+        @-webkit-keyframes subtitle{
+            0%{
+                font-size: 0;
             }
-            to{
+            100%{
+                font-size: 3em;
+            }
+        }
+        @keyframes subtitle{
+            0%{
+                font-size: 0;
+            }
+            100%{
                 font-size: 3em;
             }
         }
     }
-    .buttons{
+    .hero__buttons{
         margin-top: 10em;
     }
 }
