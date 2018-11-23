@@ -14,6 +14,14 @@
     background: $orangeDark; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-gradient(linear, left top, right top, from($orangeDark) , color-stop(40%, $orangeLight));
     background: linear-gradient(to right, $orangeDark , $orangeLight 40%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    &__form{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        display:none;
+    }
 }
 /* la sección del heroe es la parte central que engloba título, subtitulo y botones*/
 .hero{
@@ -91,9 +99,88 @@
         -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
                 box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+    &:active{
+        -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 .hero__contact{
     margin-bottom: 1.5em;
+}
+
+/***** Formulario *****/
+.form{
+    width: 90%;
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid $orangeLight;
+    padding: 1em;
+    position: fixed;
+    text-align: center;
+    top: 2em;
+    left: 5%;
+    z-index: 100;
+    display: none;
+    &__contact{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__item{
+      margin-bottom: 1em;
+      border: 1px solid $orangeLight;
+      width:100%;
+      padding: 1em .8em;
+      box-sizing: border-box;
+      border-radius: 5px;
+      color: $orangeDark;
+      &:focus{
+        box-shadow: inset 0 0 5px rgba(241, 101, 41, .5),
+        0 0 2px rgba(241, 101, 41, .5);
+        
+        }
+    
+    }
+    &__submit{
+      background: $orangeLight;
+      color: $white;
+      padding: .8em 0 1em 0;
+      font-size: 1.3em;
+      transition: all .5s ease-in-out;
+      margin-bottom: 0;
+      &:hover{
+        background: $white;
+        color: $orangeLight;
+        box-shadow: inset 0 0 0 3px $orangeLight;
+      }
+    }
+    &__close{
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        width: 40px;
+        height: 38px;
+        border-radius: 50%;
+        background: $white;
+        border: 3px solid $white;
+        color: $orangeLight;
+        cursor: pointer;
+        font-size: 1.5em;
+        font-weight: bold;
+
+    }
+  }
+/* Modificar errores prefijados por plugin validación */
+.error{
+    margin-bottom:0;
+    padding-bottom:.8em;
+    color:$orangeDark;
 }
 /*Inicio de Media queries*/
 @media screen and (min-width:450px) {
@@ -123,10 +210,22 @@
     .hero__contact, .hero__jobs{
         padding: .8em 2em .7em 2em;
     }
+    .form{
+        width: 80%;
+        top: 3em;
+        left: 10%;
+        padding: 1.5em;
+    }
 }
 @media screen and (min-width:600px) {
     .hero__buttons{
         margin-top: 5em;
+    }
+    .form{
+        width: 70%;
+        top: 5em;
+        left: 15%;
+        padding: 2em;
     }
 }
 @media screen and (min-width:750px) {
@@ -166,6 +265,12 @@
         padding: .8em 2em .7em 2em;
         margin: 1em;
     }
+    .form{
+        width: 60%;
+        top: 7em;
+        left: 20%;
+        padding: 2.5em;
+    }
 }
 @media screen and (min-width:950px) {
     .hero__subtitle{
@@ -190,6 +295,12 @@
     .hero__buttons{
         margin: 8em 0 0 0;
     }
+    .form{
+        width: 50%;
+        top: 8em;
+        left: 25%;
+        padding: 3em;
+    }
 }
 @media screen and (min-width:1200px) {
     .hero__subtitle{
@@ -213,5 +324,9 @@
     }
     .hero__buttons{
         margin-top: 10em;
+    }
+    .form{
+        width: 40%;
+        left: 30%;
     }
 }
