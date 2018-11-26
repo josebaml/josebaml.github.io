@@ -43,7 +43,7 @@
             minlength: $.validator.format( "Por favor, no escriba menos de {0} caracteres." )
 
         });
-  
+        //Form
         function appearsForm(e){
            e.preventDefault();
            $(".main__form").fadeIn();
@@ -56,7 +56,20 @@
         $(".hero__contact").click(appearsForm);
         $(".form__close").click(disappearsForm);
         $(".main__form").click(disappearsForm);
-        //$(".hero__jobs").click(disappearsForm);
+
+        //Jobs
+        function appearsJobs(e){
+           e.preventDefault();
+           $(".main__jobs").fadeIn();
+           $(".jobs").fadeIn(500);
+        }
+        function disappearsJobs(){
+            $(".main__jobs").fadeOut();
+            $(".jobs").fadeOut(500);
+        }
+        $(".hero__jobs").click(appearsJobs);
+        $(".jobs__close").click(disappearsJobs);
+        $(".main__jobs").click(disappearsJobs);
        
     });
     </script>
@@ -82,6 +95,16 @@
                 <textarea id="message" class="form__item" name="message" placeholder="Escribe tu mensaje..." rows="8" required></textarea>
                 <input type="submit" class="form__item form__submit" value="Enviar" >
             </form>
+        </section>
+        <!-- trabajos realizados -->
+        <div class="main__jobs"></div>
+        <section class="jobs">
+            <div class="jobs__close"> X </div>
+            <article class="jobs__article">
+                <h3 class="jobs__title">La casa del hispano</h3>
+                <!--<img> recomendado 300pxx194px-->
+                <a href="#"><img src="image/miniImagen.jpg" alt="La casa del hispano" class="jobs__image"></a>
+            </article>
         </section>
     </main>
 </body>
