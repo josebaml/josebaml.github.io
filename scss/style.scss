@@ -14,7 +14,7 @@
     background: $orangeDark; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-gradient(linear, left top, right top, from($orangeDark) , color-stop(40%, $orangeLight));
     background: linear-gradient(to right, $orangeDark , $orangeLight 40%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    &__form, &__jobs{
+    &__background{
         position: absolute;
         top:0;
         left:0;

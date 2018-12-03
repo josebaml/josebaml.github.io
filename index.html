@@ -46,30 +46,28 @@
         //Form
         function appearsForm(e){
            e.preventDefault();
-           $(".main__form").fadeIn();
+           $(".main__background").fadeIn();
            $("#form").fadeIn(500);
         }
         function disappearsForm(){
-            $(".main__form").fadeOut();
+            $(".main__background").fadeOut();
             $("#form").fadeOut(500);
         }
         $(".hero__contact").click(appearsForm);
-        $(".form__close").click(disappearsForm);
-        $(".main__form").click(disappearsForm);
+        $(".form__close, .main__background").click(disappearsForm);
 
         //Jobs
         function appearsJobs(e){
            e.preventDefault();
-           $(".main__jobs").fadeIn();
+           $(".main__background").fadeIn();
            $(".jobs").fadeIn(500);
         }
         function disappearsJobs(){
-            $(".main__jobs").fadeOut();
+            $(".main__background").fadeOut();
             $(".jobs").fadeOut(500);
         }
         $(".hero__jobs").click(appearsJobs);
-        $(".jobs__close").click(disappearsJobs);
-        $(".main__jobs").click(disappearsJobs);
+        $(".jobs__close, .main__background").click(disappearsJobs);
        
     });
     </script>
@@ -85,7 +83,7 @@
             </div>
         </section>
         <!-- Formulario -->
-        <div class="main__form"></div>
+        <div class="main__background"></div>
         <section class="form" id="form">
             <div class="form__close"> X </div>
             <form class="form__contact" action="#" method="POST" id="formulario_contacto">
@@ -97,7 +95,6 @@
             </form>
         </section>
         <!-- trabajos realizados -->
-        <div class="main__jobs"></div>
         <section class="jobs">
             <div class="jobs__close"> X </div>
             <article class="jobs__article">
