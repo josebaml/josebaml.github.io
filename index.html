@@ -9,53 +9,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Para los métodos de validación integramos este script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
     <script>
     $(document).ready(function(){
-        //Validacion
-        $("#formulario_contacto").validate({
-            rules:{
-                name: {
-                required: true,
-                },
-                tel:{
-                required: true,
-                minlength: 9,
-                digits: true
-                },
-                email:{
-                required: true,
-                email: true
-                },
-                message:{
-                required: true
-                }
-            }
-        });
-        $.extend( $.validator.messages, {
-            required: "Este campo es obligatorio.",
-            email: "Por favor, escriba una dirección de correo válida.",
-            digits: "Por favor, escriba sólo dígitos.",
-            maxlength: $.validator.format( "Por favor, no escriba más de {0} caracteres." ),
-            minlength: $.validator.format( "Por favor, no escriba menos de {0} caracteres." )
-
-        });
-        //Form
-        function appearsForm(e){
-           e.preventDefault();
-           $(".main__background").fadeIn();
-           $("#form").fadeIn(500);
-        }
-        function disappearsForm(){
-            $(".main__background").fadeOut();
-            $("#form").fadeOut(500);
-        }
-        $(".hero__contact").click(appearsForm);
-        $(".form__close, .main__background").click(disappearsForm);
-
         //Jobs
         function appearsJobs(e){
            e.preventDefault();
@@ -78,22 +33,11 @@
             <header class="hero__title">Joseba Moreno</header>
             <aside class="hero__subtitle">Con ganas de FrontEnd</aside>
             <div class="hero__buttons">
-                <button type="button" class="hero__contact">Contacto</button>
+                <!--<button type="button" class="hero__contact">Contacto</button>-->
                 <button type="button" class="hero__jobs">trabajos</button>
             </div>
         </section>
-        <!-- Formulario -->
         <div class="main__background"></div>
-        <section class="form" id="form">
-            <div class="form__close"> X </div>
-            <form class="form__contact" action="#" method="POST" id="formulario_contacto">
-                <input type="text" id="name" class="form__item" name="name" placeholder="Nombre Completo" required/>
-                <input type="tel" id="tel" class="form__item" name="tel" placeholder="Teléfono" pattern="^[9|8|7|6]\d{8}$" title="Debe introducir un número de teléfono válido" required/>
-                <input id="email" class="form__item" name="email" placeholder="Correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" title="Debe introducir una dirección de correo válida" required/>
-                <textarea id="message" class="form__item" name="message" placeholder="Escribe tu mensaje..." rows="8" required></textarea>
-                <input type="submit" class="form__item form__submit" value="Enviar" >
-            </form>
-        </section>
         <!-- trabajos realizados -->
         <section class="jobs">
             <div class="jobs__close"> X </div>
