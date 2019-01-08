@@ -268,8 +268,8 @@
     left: 25%; } }
 @media screen and (min-width: 1200px) {
   .jobs {
-    width: 40%;
-    left: 30%;
+    width: 50%;
+    left: 25%;
     top: 25%; } }
 
 /*# sourceMappingURL=style.css.map */

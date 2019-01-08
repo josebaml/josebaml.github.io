@@ -8,24 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Pompiere" rel="stylesheet"> 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        //Jobs
-        function appearsJobs(e){
-           e.preventDefault();
-           $(".main__background").fadeIn();
-           $(".jobs").fadeIn(500);
-        }
-        function disappearsJobs(){
-            $(".main__background").fadeOut();
-            $(".jobs").fadeOut(500);
-        }
-        $(".hero__jobs").click(appearsJobs);
-        $(".jobs__close, .main__background").click(disappearsJobs);
-       
-    });
-    </script>
 </head>
 <body>
     <main class="main">  
@@ -53,5 +35,22 @@
             </article>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        //Jobs
+        function appearsJobs(e){
+           e.preventDefault();
+           $(".main__background").fadeIn();
+           $(".jobs").fadeIn(500);
+        }
+        function disappearsJobs(){
+            $(".main__background").fadeOut();
+            $(".jobs").fadeOut(500);
+        }
+        $(".hero__jobs").click(appearsJobs);
+        $(".jobs__close, .main__background").click(disappearsJobs);
+    });
+    </script>
 </body>
 </html>
