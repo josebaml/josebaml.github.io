@@ -35,74 +35,101 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: -6em;
-}
-.hero__title{
-    font-family: 'Comfortaa', cursive;
-    font-size: 10vmin;/*1.8em*/
-}
-.hero__subtitle{
-    font-family: 'Pompiere', cursive;
-    padding-top: 1em;
-    font-size: 1.5em;
-    -webkit-animation: subtitle 2s;
-            animation: subtitle 2s;
-    @-webkit-keyframes subtitle{
-        0%{
-            font-size: 0em;
+    margin-top: 1em;
+    max-width: 90%;
+    &__title{
+        font-family: 'Comfortaa', cursive;
+        font-size: 10vmin;/*1.8em*/
+    }
+    &__subtitle{
+        font-family: 'Pompiere', cursive;
+        padding-top: 1em;
+        font-size: 1.5em;
+        -webkit-animation: subtitle 2s;
+                animation: subtitle 2s;
+        @-webkit-keyframes subtitle{
+            0%{
+                font-size: 0em;
+            }
+            100%{
+                font-size: 1.5em;
+            }
         }
-        100%{
-            font-size: 1.5em;
+        @keyframes subtitle{
+            0%{
+                font-size: 0em;
+            }
+            100%{
+                font-size: 1.5em;
+            }
         }
     }
-    @keyframes subtitle{
-        0%{
-            font-size: 0em;
+    &__buttons{
+        margin-top: 4em;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+                flex-direction:column;
+    }
+    &__jobs{
+        font-family: 'Comfortaa', cursive;
+        padding: .8em 1.5em .7em 1.5em;
+        font-size: 1.5em;
+        color: $white;
+        border: 4px solid $white;
+        border-radius: 8px;
+        background: none;
+        -webkit-box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
+                box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
+        -webkit-transition: border .5s, color .5s, -webkit-box-shadow .5s;
+        transition: border .5s, color .5s, -webkit-box-shadow .5s;
+        transition: border .5s, color .5s, box-shadow .5s;
+        transition: border .5s, color .5s, box-shadow .5s, -webkit-box-shadow .5s;
+    
+        &:hover{
+            border: 4px solid #fff;
+            color: #fff;
+            -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                    box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
-        100%{
-            font-size: 1.5em;
+        &:active{
+            -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
         }
     }
-}
-.hero__buttons{
-    margin-top: 5em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-        -ms-flex-direction:column;
-            flex-direction:column;
-}
-.hero__jobs{
-    font-family: 'Comfortaa', cursive;
-    padding: .8em 1.5em .7em 1.5em;
-    font-size: 1.5em;
-    color: $white;
-    border: 4px solid $white;
-    border-radius: 8px;
-    background: none;
-    -webkit-box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
-            box-shadow: 9px 9px 9px rgba(0,0,0,0.06);
-    -webkit-transition: border .5s, color .5s, -webkit-box-shadow .5s;
-    transition: border .5s, color .5s, -webkit-box-shadow .5s;
-    transition: border .5s, color .5s, box-shadow .5s;
-    transition: border .5s, color .5s, box-shadow .5s, -webkit-box-shadow .5s;
-
-    &:hover{
-        border: 4px solid #fff;
-        color: #fff;
-        -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    &__footer{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: space-between;
+            -ms-flex-pack: space-between;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        margin-top: 4em;
     }
-    &:active{
-        -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    &__linkedin, &__github, &__twitter, &__email{
+        width: 45px;
+        height: 45px;
+        margin: .5em;
+        /*
+        &:hover{
+            -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        &:active{
+            -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+        */
     }
 }
 /***** Jobs *****/
@@ -171,11 +198,10 @@
             }
         }
     }
-    .hero__buttons{
-        margin-top: 5em;
-    }
     .hero__jobs{
-        padding: .8em 2em .7em 2em;
+        padding: 1em 1.5em .9em 1.5em;
+        font-size: 1.6em;
+        //padding: .8em 2em .7em 2em;
     }
     .jobs{
         width:90%;
@@ -188,11 +214,16 @@
     }
 }
 @media screen and (min-width:600px) {
-    .hero__buttons{
-        margin-top: 7em;
+    .hero__buttons, .hero__footer{
+        margin-top: 5em;
     }
     .jobs{
         padding: 5em 1em;
+    }
+    .hero__linkedin, .hero__github, .hero__twitter, .hero__email{
+        width: 55px;
+        height: 55px;
+        margin: .5em;
     }
 }
 @media screen and (min-width:750px) {
@@ -216,8 +247,11 @@
             }
         }
     }
+    .hero__buttons, .hero__footer{
+        margin-top: 6em;
+    }
     .hero__jobs{
-        width: 60%;
+        width: 90%;
         align-self: center;
     }
     .jobs{
@@ -246,8 +280,12 @@
             }
         }
     }
-    .hero__buttons{
+    .hero__buttons, .hero__footer{
         margin-top: 8em;
+    }
+    .hero__jobs{
+        padding: 1.1em 1.5em 1em 1.5em;
+        font-size: 1.8em;
     }
     .jobs{
         width: 60%;
@@ -273,6 +311,11 @@
                 font-size: 3em;
             }
         }
+    }
+    .hero__jobs{
+        width: 70%;
+        align-self: center;
+        font-size: 2em;
     }
     .jobs{
         width: 50%;
