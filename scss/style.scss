@@ -196,22 +196,8 @@
     .hero__subtitle{
         padding-top: .6em;
         font-size: 1.8em;
-        @-webkit-keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 1.8em;
-            }
-        }
-        @keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 1.8em;
-            }
-        }
+        -webkit-animation: subtitle_450 2s;
+        animation: subtitle_450 2s;
     }
     .hero__jobs{
         padding: 1em 1.5em .9em 1.5em;
@@ -226,6 +212,22 @@
         &__title{
             font-size: 1.5em;
         }
+    }
+}
+@-webkit-keyframes subtitle_450{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 1.8em;
+    }
+}
+@keyframes subtitle_450{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 1.8em;
     }
 }
 @media screen and (min-width:600px) {
@@ -245,22 +247,8 @@
     .hero__subtitle{
         padding-top: .8em;
         font-size: 2.2em;
-        @-webkit-keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 2.2em;
-            }
-        }
-        @keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 2.2em;
-            }
-        }
+        -webkit-animation: subtitle_750 2s;
+        animation: subtitle_750 2s;
     }
     .hero__buttons, .hero__footer{
         margin-top: 6em;
@@ -275,25 +263,27 @@
         top: 20%;
     }
 }
+@-webkit-keyframes subtitle_750{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 2.2em;
+    }
+}
+@keyframes subtitle_750{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 2.2em;
+    }
+}
 @media screen and (min-width:950px) {
     .hero__subtitle{
         font-size: 2.5em;
-        @-webkit-keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 2.5em;
-            }
-        }
-        @keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 2.5em;
-            }
-        }
+        -webkit-animation: subtitle_950 2s;
+        animation: subtitle_950 2s;
     }
     .hero__buttons, .hero__footer{
         margin-top: 8em;
@@ -307,25 +297,43 @@
         left: 20%;
     }
 }
+@-webkit-keyframes subtitle_950{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 2.5em;
+    }
+}
+@keyframes subtitle_950{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 2.5em;
+    }
+}
+@-webkit-keyframes subtitle_1200{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 3em;
+    }
+}
+@keyframes subtitle_1200{
+    0%{
+        font-size: 0;
+    }
+    100%{
+        font-size: 3em;
+    }
+}
 @media screen and (min-width:1200px) {
     .hero__subtitle{
         font-size: 3em;
-        @-webkit-keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 3em;
-            }
-        }
-        @keyframes subtitle{
-            0%{
-                font-size: 0;
-            }
-            100%{
-                font-size: 3em;
-            }
-        }
+        -webkit-animation: subtitle_1200 2s;
+        animation: subtitle_1200 2s;
     }
     .hero__jobs{
         width: 70%;
@@ -337,6 +345,7 @@
         left: 25%;
     }
 }
+
 @media screen and (min-width:1200px) {
     .jobs{
         width: 50%;
