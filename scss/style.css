@@ -17,6 +17,7 @@
   background: -webkit-gradient(linear, left top, right top, from(#e44d26), color-stop(40%, #f16529));
   background: linear-gradient(to right, #e44d26, #f16529 40%);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
 }
 
 .main__background {
@@ -156,25 +157,31 @@
   border-radius: 5px;
   border: 1px solid #f16529;
   color: #f16529;
-  padding: 2em 1em;
+  padding: 1em;
   text-align: center;
   position: fixed;
-  top: 20%;
+  top: 3%;
   left: 5%;
   z-index: 100;
   display: none;
+  padding: 1em 0;
+}
+
+.jobs__container {
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .jobs__article {
   width: 90%;
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 
 .jobs__title {
   font-family: 'Comfortaa', cursive;
   font-size: 1.1em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .jobs__image {
@@ -233,11 +240,12 @@
   .jobs {
     width: 90%;
     left: 5%;
-    top: 15%;
-    padding: 3em 1em;
   }
   .jobs__title {
     font-size: 1.5em;
+  }
+  .jobs__container {
+    height: auto;
   }
 }
 
@@ -263,9 +271,6 @@
   .hero__buttons, .hero__footer {
     margin-top: 5em;
   }
-  .jobs {
-    padding: 5em 1em;
-  }
   .hero__linkedin, .hero__github, .hero__twitter, .hero__email {
     width: 55px;
     height: 55px;
@@ -290,7 +295,6 @@
   .jobs {
     width: 80%;
     left: 10%;
-    top: 20%;
   }
 }
 
@@ -328,6 +332,7 @@
   .jobs {
     width: 60%;
     left: 20%;
+    top: 10%;
   }
 }
 
@@ -388,6 +393,5 @@
   .jobs {
     width: 50%;
     left: 25%;
-    top: 25%;
   }
 }

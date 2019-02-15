@@ -14,6 +14,7 @@
     background: $orangeDark; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-gradient(linear, left top, right top, from($orangeDark) , color-stop(40%, $orangeLight));
     background: linear-gradient(to right, $orangeDark , $orangeLight 40%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
     &__background{
         position: absolute;
         top:0;
@@ -93,7 +94,6 @@
         transition: border .5s, color .5s, -webkit-box-shadow .5s;
         transition: border .5s, color .5s, box-shadow .5s;
         transition: border .5s, color .5s, box-shadow .5s, -webkit-box-shadow .5s;
-    
         &:hover{
             border: 4px solid #fff;
             color: #fff;
@@ -138,22 +138,27 @@
     border-radius: 5px;
     border: 1px solid $orangeLight;
     color: $orangeLight;
-    padding: 2em 1em;
+    padding: 1em;
     text-align: center;
     position: fixed;
-    top: 20%;
+    top: 3%;
     left: 5%;
     z-index: 100;
     display: none;
+    padding: 1em 0;
+    &__container{
+        max-height: 80vh;
+        overflow-y: auto;
+    }
     &__article{
         width: 90%;
         border-radius: 5px;
-        margin: 0 auto;
+        margin: 1em auto;
     }
     &__title{
         font-family: 'Comfortaa', cursive;
         font-size: 1.1em;
-        margin-bottom: 1.5em;
+        margin-bottom: 1em;
     }
     &__image{
         border: 2px solid $orangeLight;
@@ -202,15 +207,15 @@
     .hero__jobs{
         padding: 1em 1.5em .9em 1.5em;
         font-size: 1.6em;
-        //padding: .8em 2em .7em 2em;
     }
     .jobs{
         width:90%;
         left: 5%;
-        top: 15%;
-        padding: 3em 1em;
         &__title{
             font-size: 1.5em;
+        }
+        &__container{
+            height: auto;
         }
     }
 }
@@ -233,9 +238,6 @@
 @media screen and (min-width:600px) {
     .hero__buttons, .hero__footer{
         margin-top: 5em;
-    }
-    .jobs{
-        padding: 5em 1em;
     }
     .hero__linkedin, .hero__github, .hero__twitter, .hero__email{
         width: 55px;
@@ -260,7 +262,6 @@
     .jobs{
         width: 80%;
         left: 10%;
-        top: 20%;
     }
 }
 @-webkit-keyframes subtitle_750{
@@ -295,6 +296,7 @@
     .jobs{
         width: 60%;
         left: 20%;
+        top: 10%;
     }
 }
 @-webkit-keyframes subtitle_950{
@@ -350,6 +352,5 @@
     .jobs{
         width: 50%;
         left: 25%;
-        top: 25%;
     }
 }
