@@ -121,6 +121,8 @@
         height: 45px;
         margin: .5em;
         border-radius: 50%;
+        -webkit-transition: .4s ease-in-out;
+                transition: .4s ease-in-out;
         &:hover{
             -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
                     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -146,6 +148,8 @@
     z-index: 100;
     display: none;
     padding: 1em 0;
+    -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
     &__container{
         max-height: 80vh;
         overflow-y: auto;
@@ -164,6 +168,8 @@
         border: 2px solid $orangeLight;
         border-radius: 5px;
         margin-bottom: 1em;
+        -webkit-transition: .4s ease-in-out;
+        transition: .4s ease-in-out;
         &:hover{
             -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
                     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -175,17 +181,24 @@
     }
     &__close{
         position: absolute;
-        top: -12px;
+        top: -14px;
         right: -12px;
         width: 40px;
         height: 38px;
+        padding-top: 2px;
         border-radius: 50%;
-        background: $white;
+        background-color: $white;
         border: 3px solid $white;
         color: $orangeLight;
         cursor: pointer;
         font-size: 1.5em;
         font-weight: bold;
+        -webkit-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        &:hover{
+            color: $white;
+            background-color: $orangeLight;
+        }
     }
         &:hover{
             -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
